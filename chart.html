@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Pie chart</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="editor.js"></script>
+        <link type="text/css" href="editor.css" rel="stylesheet"/>
+        <script src="http://tinymce.cachefly.net/4/tinymce.min.js"></script>
+      
+<style>
+        caption{
+        caption-side: top;
+      }
+      </style>  
+</head>
+<body>
+<h1 style="text-align:center; font-size: 5em;" ><i>Booking Summary</i></h1>
+
+   <form method="POST" class="form-control" action="{{ url_for('pie') }}" id="piechart" ></form>
+
+  <div class="col-5" >
+    <h1>Registration ID's</h1><br>
+    {% for d in row %}
+         <ul><li><a href="/show_entry/{{d}}">{{ d }}</a></li></ul>
+    {% endfor %}
+</div>
+
+<div class="col-10">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<meta name="viewport" content= "width=device-width, initial-scale=1"> 
+      
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+
+<script src="js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+let sf = '{{ valuef }}'
+let gr = '{{ valueg }}'
+let co = '{{ valuec }}'
+let ot = '{{ valueo }}'
+
+// Draw the chart and set the chart values
+function drawChart(valuef,valueg,valuec,valueo) {
+    
+  var data = google.visualization.arrayToDataTable([
+  ['REG_TYPE', 'Percentage'],
+  ['Self', +sf],
+  ['Group', +gr],
+  ['Corporate', +co],
+  ['Others', +ot],
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = { 'width':2250, 'height':700};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+  
+}
+</script>
+</div>
+</body>
+</html>
+
+
+
+
+

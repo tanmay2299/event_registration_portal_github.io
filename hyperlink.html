@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ <head> 
+    <title>Get information</title> 
+    
+    <meta charset="utf-8"> 
+    
+    <meta name="viewport" content= "width=device-width, initial-scale=1"> 
+      
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+  
+    <script src="js/bootstrap.min.js"></script> 
+ </head> 
+  <body> 
+    <form method="POST" action="{{ url_for('hyperlink') }}" id="details">
+    {% for d in row %}
+       <ol><li><a href="/show_entry/{{d}}">{{ d }}</a></li></ol>
+    {% endfor %}
+    
+  </body>
+</html>

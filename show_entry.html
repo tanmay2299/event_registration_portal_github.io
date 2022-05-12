@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ <head> 
+    <title>Event Registration</title> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+      margin: 2em;
+      text-align: left;
+      font-family: arial;
+    }
+.id{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: 2em;
+      text-align: left;
+      font-family: arial;
+}
+
+</style>
+ </head> 
+  <body> 
+    <p style=" font-size: 40px; text-align:center" ><b><i>Details!!</i></b></p>
+   
+    <div class="card" style="text-align:left ; ">
+        <p style="font-size:18px"><label>Registration ID: {{ reg_no }}</label><br><br>
+        <label>Fullname: {{ name }}</label><br><br>
+        <label>Mobile: {{ mob_no }}</label><br><br>
+        <label>Email: {{ email }}</label><br><br>
+        <label>Registration Type: {{ reg_type }}</label><br><br>
+        <label>Number Of Tickets: {{ no_of_tickets }}</label><br><br>
+        <label>Booking Details: {{ metadata }}</label><br><br></p>
+        
+      </div>
+
+      <div class="id" style="text-align:left">
+        <img src="{{url_for('static',filename=upload_id)}}">
+      </div>
+  
+</body>
+  </html>
+

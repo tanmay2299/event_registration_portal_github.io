@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ <head> 
+    <title>Event Registration</title> 
+    
+    <meta charset="utf-8"> 
+    
+    <meta name="viewport" content= "width=device-width, initial-scale=1"> 
+   <script src="js/bootstrap.min.js"></script> 
+    <style>
+  .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      background-color: rgb(250, 248, 248);
+    }
+
+html,body { height: 50%; 
+                background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+      </style>
+ </head> 
+ <body style="background-image: url('assets/images/home_bg.jpg')">
+  <p style="color: rgb(250, 248, 248); font-style:normal; font-size: 40px; text-align:center" ><b><i>Confirm your pass</i></b></p>
+ <div class="card" style="text-align:center">
+  
+    <form method="POST" action="{{url_for('idcard')}}" id="disp_details" >
+   <p style="font-size:18px ; text-align: center; margin-right: 1em;color: #000;"><br>
+    <label><b>Fullname: {{ value }}</label><br><br>
+    <label>Mobile: {{ value1 }}</label><br><br>
+    <label>Email: {{ value2 }}</label><br><br>
+    <label>Registration Type: {{ value3 }}</label><br><br>
+    <label>Number Of Tickets: {{ value4 }}</label><br><br>
+   
+     <img src="{{url_for('static',filename=image_name)}}">
+     <br>
+   <br>
+    </div>
+   <button type="button" value="Edit" onclick="window.history.go(-1)" style="width:10em; height: 3.5em;margin-left: 53em ;margin-top: 10em;background-color: #000 ; color: white" >Edit</button>
+   <button type="submit" value="Upload" style="width:10em; height: 3.5em; margin-top: 10em;background-color: #000 ; color: white">Submit</button>
+    </p>
+
+    </form>
+
+
+    </script>
+  
+
+    
+</body>
+  </html>

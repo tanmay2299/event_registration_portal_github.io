@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ <head> 
+    <title>Get information</title> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      background-color: rgb(250, 248, 248);
+    }
+
+    html,body { height: 50%; 
+    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;}
+
+</style>
+ </head> 
+  
+    <body style="background-image: url('assets/images/home_bg.jpg')">
+    <p style="color: rgb(250, 248, 248); font-style:normal; font-size: 40px; text-align:center" ><b><i>Thank you for Registration!!!</i></b></p>
+   <div class="card" style="text-align:center">
+    <p style="font-size:18px ; margin-left: 1em ; text-align: left; margin-right: 6em;color:black"><label><br>Registration No.: {{ value5 }}</label><br><br>
+        <label>Fullname: {{ value }}</label><br><br>
+        <label>Mobile: {{ value1 }}</label><br><br>
+        <label>Email: {{ value2 }}</label><br><br>
+        <label>Registration Type: {{ value3 }}</label><br><br>
+        <label>Number Of Tickets: {{ value4 }}</label><br><br></p>
+      </div>
+      <p style="color: rgb(250, 248, 248); font-style:normal; font-size: 40px; margin-left: 22em;" ><b><i>...See You Soon!</i></b></p>
+</body>
+  </html>

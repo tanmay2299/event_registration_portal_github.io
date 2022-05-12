@@ -1,0 +1,130 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ <head> 
+    <title>Event Registration</title>    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">     
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="editor.js"></script>
+  <link type="text/css" href="editor.css" rel="stylesheet"/>
+  <script src="http://tinymce.cachefly.net/4/tinymce.min.js"></script>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+  
+    <script src="js/bootstrap.min.js"></script> 
+ </head> 
+<style>
+  input[type=text], input[type=password] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+select{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="email"]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+html,body { height: 50%; 
+              background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  body,html {font-family: Arial, Helvetica, sans-serif;}
+  </style>
+
+  <body  >  
+    
+    <p style=" font-size: 40px; text-align:center;background-color: rgb(84, 84, 87)  ; color: rgb(245, 241, 241)" ><b><i> Event Register</i></b></p>
+   
+    
+      <form id="details" action="" style="background-image: url('/static/home_bg.jpg')"  method="POST" enctype="multipart/form-data" class="card" style="text-align:center">  
+        <br>
+        <br>   
+
+          <p style="font-size:18px ; text-align: right; margin-right: 30em;color: rgb(245, 241, 241);"><label><b> Name: </b></label>
+          <input type="text"  name="name" style="width: 500px;" id="FULLNAME" placeholder="Enter your name here" required />
+          <br>
+          <br>
+      
+          <label><b> Mobile number: </b></label>
+          <input type="text" name="phn" style="width: 500px;" id="MOBILE" placeholder="Enter your mobile number here" required />
+          <br>
+         <br>
+      
+          <label><b> Email: </b></label>
+          <input type="Email" name="email" style="width: 500px;" id="EMAIL" placeholder="Enter your email-id here" required />
+          <br><br>
+
+          <label><b> Select Registration Type: </b></label>
+          <select id="REG_TYPE" name="reg" style="width: 500px;"  onChange='Choice();'>
+            <option> </option>
+              <option   >Self</option>
+              <option >Group</option>
+                <option >Corporate</option>
+                  <option >Others</option>
+            </select>  
+
+           <br>
+           <br>
+           <label><b> Enter number of tickets: </b></label>
+           <input type="text" style="width: 500px;" name="tic" id="nooftic" placeholder="Enter number of tickets here"  required />
+           <br><br>
+      
+      
+           <input type="submit" value="Submit" style="width:10em; height: 3.5em; margin-top: 1em;background-color: #000 ; color: white ;margin-left: 3em;">
+          </p>
+  
+           <script type="text/javascript">
+
+var nooftic = new Array();
+nooftic[0] = "";
+nooftic[1] = 1;
+nooftic[2] = "";
+nooftic[3] = "";
+nooftic[4] = "";
+function Choice() {
+            //x = document.getElementById("users");
+            y = document.getElementById("REG_TYPE");
+
+              //x.value = y.options[y.selectedIndex].text;
+              document.getElementById("nooftic").value = nooftic[y.selectedIndex];
+              
+         }
+
+
+
+      
+
+
+
+     </script>  
+  
+     </form>
+     </div>
+     
+
+  </body>
+  </html>
